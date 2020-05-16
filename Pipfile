@@ -4,6 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pytest = "*"
+pytest-cov = "*"
 
 [packages]
 flask = "*"
@@ -13,6 +15,7 @@ flask-migrate = "*"
 flask-admin = "*"
 flask-babelex = "*"
 flask-security-too = "*"
+flask-socketio = "*"
 
 [requires]
 python_version = "3.8"
