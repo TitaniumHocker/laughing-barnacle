@@ -6,6 +6,9 @@ verify_ssl = true
 [dev-packages]
 pytest = "*"
 pytest-cov = "*"
+pylint = "*"
+jedi = "*"
+pylint-flask-sqlalchemy = "*"
 
 [packages]
 flask = "*"
@@ -16,6 +19,11 @@ flask-admin = "*"
 flask-babelex = "*"
 flask-security-too = "*"
 flask-socketio = "*"
+bcrypt = "*"
+gevent = "*"
+gevent-websocket = "*"
+brython = "*"
+flask-wtf = "*"
 
 [requires]
 python_version = "3.8"
