@@ -45,6 +45,7 @@ class UserView(AdminModelView):
     column_editable_list = ('active',)
     column_labels = {
         'username': 'Имя пользователя',
+        'friends': 'Друзья',
         'email': 'Почтовый адрес',
         'active': 'Активирован',
         'password': 'Пароль',

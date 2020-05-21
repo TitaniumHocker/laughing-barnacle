@@ -21,6 +21,13 @@ chats_members = db.Table(
 )
 
 
+friends = db.Table(
+    'friends',
+    db.Column('user_id', db.Integer, db.ForeignKey('users.id')),
+    db.Column('friend_id', db.Integer, db.ForeignKey('users.id'))
+)
+
+
 class Role(db.Model, RoleMixin):
     __tablename__ = 'roles'
     id = db.Column(db.Integer, primary_key=True)
@@ -51,6 +58,12 @@ class User(db.Model, UserMixin):
     chats = db.relationship(
         'Chat', secondary=chats_members,
         backref=db.backref('members', lazy='dynamic')
+    )
+    friends = db.relationship(
+        'User', secondary=friends,
+        primaryjoin=(friends.c.user_id == id),
+        secondaryjoin=(friends.c.friend_id == id),
+        lazy='dynamic'
     )
     profile = db.relationship('Profile', uselist=False, backref='owner')
 

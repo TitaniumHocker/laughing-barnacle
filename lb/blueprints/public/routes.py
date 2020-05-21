@@ -9,11 +9,11 @@ def index():
     return render_template('public/index.html', page_title='Главная')
 
 
-@public.route('/profile', methods=['GET', 'POST'])
+@public.route('/profile/<int:id>', methods=['GET', 'POST'])
 @auth_required()
-def profile():
+def profile(id):
     if request.method == 'GET':
-        return render_template('public/profile.html', user=current_user)
+        return render_template('public/profile.html')
 
 
 @public.route('/chats', methods=['GET', 'POST'])
