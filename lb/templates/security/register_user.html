@@ -16,9 +16,9 @@
     <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
     {% include "security/_messages.html" %}
     {{ render_field(register_user_form.email, id='inputEmail', class='form-control', placeholder='Email', required=True, style='margin-bottom: -1px; border-bottom-right-radius: 0; border-bottom-left-radius: 0;') }}
-    {{ render_field(register_user_form.password, id='inputPassword', class='form-control', placeholder='Password', required=True) }}
+    {{ render_field(register_user_form.password, id='inputPassword', class='form-control', placeholder='Пароль', required=True) }}
     {% if register_user_form.password_confirm %}
-      {{ render_field(register_user_form.password_confirm, class='form-control', placeholder='Confirmation', required=True) }}
+      {{ render_field(register_user_form.password_confirm, class='form-control', placeholder='Подтверждение', required=True) }}
     {% endif %}
       {{ render_field_errors(register_user_form.csrf_token) }}
       {{ render_field_errors(register_user_form.email) }}
